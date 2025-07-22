@@ -1,2 +1,12 @@
-# algorithm
-This is an auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+# 
+# 백준 & 프로그래머스 문제 풀이 목록
+
+아자아자 화이팅!!
+
+## 📚 백준
+### 🚀 Gold
+| 문제번호 | 링크 |
+| ----- | ----- |
+|16637. 괄호 추가하기|[링크](./%EB%B0%B1%EC%A4%80/Gold/16637.%E2%80%85%EA%B4%84%ED%98%B8%E2%80%85%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/README.md)|
+|17070. 파이프 옮기기 1|[링크](./%EB%B0%B1%EC%A4%80/Gold/17070.%E2%80%85%ED%8C%8C%EC%9D%B4%ED%94%84%E2%80%85%EC%98%AE%EA%B8%B0%EA%B8%B0%E2%80%851/README.md)|
+|17135. 캐슬 디펜스|[링크](./%EB%B0%B1%EC%A4%80/Gold/17135.%E2%80%85%EC%BA%90%EC%8A%AC%E2%80%85%EB%94%94%ED%8E%9C%EC%8A%A4/%EC%BA%90%EC%8A%AC%E2%80%85%EB%94%94%ED%8E%9C%EC%8A%A4.java)|
