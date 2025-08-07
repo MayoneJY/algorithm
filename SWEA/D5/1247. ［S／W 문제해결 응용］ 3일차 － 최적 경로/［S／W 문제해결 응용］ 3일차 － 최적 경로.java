@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Solution {
     static int N;
-    static List<int[]> com;
     static Where[] people;
     static int min;
     static Where office;
@@ -18,7 +17,6 @@ public class Solution {
         for(int t = 1; t <= T; t++){
             N = Integer.parseInt(br.readLine());
             people = new Where[N];
-            com = new ArrayList<int[]>();
             min = Integer.MAX_VALUE;
             StringTokenizer st = new StringTokenizer(br.readLine());
             office = new Where(Integer.parseInt(st.nextToken()),
@@ -33,10 +31,6 @@ public class Solution {
             for(int i = 0; i < N; i++)
                 temp[i] = -1;
             combination(temp, 0);
-
-            // for(int i = 0; i < com.size(); i++){
-            //     sumDistance(com.get(i), office, home);
-            // }
             bw.write("#" + Integer.toString(t) + " " + Integer.toString(min) + "\n");
             bw.flush();
         }
@@ -60,9 +54,7 @@ public class Solution {
 
     static void combination(int[] c, int idx){
         if(idx == N){
-            // com.add(c);
             sumDistance(c);
-            // System.out.println(Arrays.toString(c));
             return;
         }
 
@@ -72,10 +64,9 @@ public class Solution {
                 if(c[j] == i) temp = true;
             }
             if(!temp){
-                int[] tempC = new int[N];
-                tempC = c.clone();
-                tempC[idx] = i;
-                combination(tempC, idx+1);
+                c[idx] = i;
+                combination(c, idx+1);
+                c[idx] = -1;
             }
         }
     }
