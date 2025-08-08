@@ -29,4 +29,5 @@
 | ----- | ----- |
 |10773. 제로|[링크](./%EB%B0%B1%EC%A4%80/Silver/10773.%E2%80%85%EC%A0%9C%EB%A1%9C/README.md)|
 |10828. 스택|[링크](./%EB%B0%B1%EC%A4%80/Silver/10828.%E2%80%85%EC%8A%A4%ED%83%9D/README.md)|
+|1926. 그림|[링크](./%EB%B0%B1%EC%A4%80/Silver/1926.%E2%80%85%EA%B7%B8%EB%A6%BC/%EA%B7%B8%EB%A6%BC.java)|
 |5567. 결혼식|[링크](./%EB%B0%B1%EC%A4%80/Silver/5567.%E2%80%85%EA%B2%B0%ED%98%BC%EC%8B%9D/%EA%B2%B0%ED%98%BC%EC%8B%9D.java)|
