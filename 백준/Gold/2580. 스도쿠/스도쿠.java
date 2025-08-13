@@ -44,20 +44,22 @@ public class Main {
                     checkXY[map[i][j]-1] = true;
             }
         }
-        List<Integer> possible = new ArrayList<>();
+        int[] possible = new int[N];
+        Arrays.fill(possible, -1);
+
         boolean check = false;
+        int p = 0;
         for(int i = 0; i < N; i++){
             if(!checkX[i] && !checkY[i] && !checkXY[i]){
-                possible.add(i+1);
+                possible[p] = i+1;
+                p++;
                 check = true;
             }
         }
         if(!check) return;
-        checkX = null;
-        checkY = null;
-        checkXY = null;
-        for(int i = 0; i < possible.size(); i++){
-            map[now.y][now.x] = possible.get(i);
+        for(int i = 0; i < possible.length; i++){
+            if(possible[i] == -1) break;
+            map[now.y][now.x] = possible[i];
             dfs(idx+1);
             map[now.y][now.x] = 0;
         }
