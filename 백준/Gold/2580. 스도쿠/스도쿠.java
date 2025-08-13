@@ -5,7 +5,15 @@ public class Main {
     static final int N = 9;
     static int[][] map = new int[N][N];
     static List<Node> list = new ArrayList<>();
-    public static void main(String[] args) throws Exception{
+    static boolean[] checkX = new boolean[N];
+    static boolean[] checkY = new boolean[N];
+    static boolean[] checkXY = new boolean[N];
+    public static void main(String[] args) throws Exception {
+        init();
+        dfs(0);
+    }
+
+    static void init() throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         for(int i = 0; i < N; i++){
             StringTokenizer st = new StringTokenizer(br.readLine());
@@ -14,54 +22,55 @@ public class Main {
                 if(map[i][j] == 0) list.add(new Node(i, j));
             }
         }
-        dfs(0);
     }
 
     static void dfs(int idx){
         if(idx == list.size()){
-            for(int i = 0; i < N; i++){
-                for(int j = 0; j < N; j++){
-                    System.out.print(map[i][j] + " ");
-                }
-                System.out.println();
-            }
+            print();
             System.exit(0);
         }
 
         Node now = list.get(idx);
-        boolean[] checkX = new boolean[N];
-        boolean[] checkY = new boolean[N];
-        for(int i = 0; i < N; i++){
-            if(map[now.y][i] != 0)
-                checkX[map[now.y][i]-1] = true;
-            if(map[i][now.x] != 0)
-                checkY[map[i][now.x]-1] = true;
-        }
-        boolean[] checkXY = new boolean[N];
-        for(int i = (now.y / 3) * 3; i < ((now.y / 3) + 1) * 3; i++){
-            for(int j = (now.x / 3) * 3; j < ((now.x / 3) + 1) * 3; j++){
-                if(map[i][j] != 0)
-                    checkXY[map[i][j]-1] = true;
-            }
-        }
-        int[] possible = new int[N];
-        Arrays.fill(possible, -1);
 
-        boolean check = false;
-        int p = 0;
-        for(int i = 0; i < N; i++){
-            if(!checkX[i] && !checkY[i] && !checkXY[i]){
-                possible[p] = i+1;
-                p++;
-                check = true;
+        for(int i = 1; i <= N; i++){
+            if(checkX(now.y, now.x, i) && checkY(now.y, now.x, i) && checkXY(now.y, now.x, i)){
+                map[now.y][now.x] = i;
+                dfs(idx+1);
+                map[now.y][now.x] = 0;
             }
         }
-        if(!check) return;
-        for(int i = 0; i < possible.length; i++){
-            if(possible[i] == -1) break;
-            map[now.y][now.x] = possible[i];
-            dfs(idx+1);
-            map[now.y][now.x] = 0;
+    }
+
+    static boolean checkX(int y, int x, int n){
+        for(int i = 0; i < N; i++){
+            if(map[y][i] == n) return false;
+        }
+        return true;
+    }
+
+    static boolean checkY(int y, int x, int n){
+        for(int i = 0; i < N; i++){
+            if(map[i][x] == n) return false;
+        }
+        return true;
+    }
+
+    static boolean checkXY(int y, int x, int n){
+        for(int i = (y / 3) * 3; i < ((y / 3) + 1) * 3; i++){
+            for(int j = (x / 3) * 3; j < ((x / 3) + 1) * 3; j++){
+                if(map[i][j] == n)
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    static void print(){
+        for(int i = 0; i < N; i++){
+            for(int j = 0; j < N; j++){
+                System.out.print(map[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 
