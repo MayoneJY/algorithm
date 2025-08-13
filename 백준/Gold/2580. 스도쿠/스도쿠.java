@@ -5,9 +5,7 @@ public class Main {
     static final int N = 9;
     static int[][] map = new int[N][N];
     static List<Node> list = new ArrayList<>();
-    static boolean[] checkX = new boolean[N];
-    static boolean[] checkY = new boolean[N];
-    static boolean[] checkXY = new boolean[N];
+    
     public static void main(String[] args) throws Exception {
         init();
         dfs(0);
