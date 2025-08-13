@@ -53,6 +53,9 @@ public class Main {
             }
         }
         if(!check) return;
+        checkX = null;
+        checkY = null;
+        checkXY = null;
         for(int i = 0; i < possible.size(); i++){
             map[now.y][now.x] = possible.get(i);
             dfs(idx+1);
