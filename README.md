@@ -18,6 +18,10 @@
 | 문제번호 | 링크 |
 | ----- | ----- |
 |1247. ［S／W 문제해결 응용］ 3일차 － 최적 경로|[링크](./SWEA/D5/1247.%E2%80%85%EF%BC%BBS%EF%BC%8FW%E2%80%85%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%E2%80%85%EC%9D%91%EC%9A%A9%EF%BC%BD%E2%80%853%EC%9D%BC%EC%B0%A8%E2%80%85%EF%BC%8D%E2%80%85%EC%B5%9C%EC%A0%81%E2%80%85%EA%B2%BD%EB%A1%9C/README.md)|
+### 🚀 D6
+| 문제번호 | 링크 |
+| ----- | ----- |
+|1267. ［S／W 문제해결 응용］ 10일차 － 작업순서|[링크](./SWEA/D6/1267.%E2%80%85%EF%BC%BBS%EF%BC%8FW%E2%80%85%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%E2%80%85%EC%9D%91%EC%9A%A9%EF%BC%BD%E2%80%8510%EC%9D%BC%EC%B0%A8%E2%80%85%EF%BC%8D%E2%80%85%EC%9E%91%EC%97%85%EC%88%9C%EC%84%9C/README.md)|
 ## 📚 백준
 ### 🚀 Gold
 | 문제번호 | 링크 |
