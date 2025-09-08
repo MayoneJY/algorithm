@@ -53,6 +53,7 @@
 | 문제번호 | 링크 |
 | ----- | ----- |
 |16930. 달리기|[링크](./%EB%B0%B1%EC%A4%80/Platinum/16930.%E2%80%85%EB%8B%AC%EB%A6%AC%EA%B8%B0/README.md)|
+|1854. K번째 최단경로 찾기|[링크](./%EB%B0%B1%EC%A4%80/Platinum/1854.%E2%80%85K%EB%B2%88%EC%A7%B8%E2%80%85%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C%E2%80%85%EC%B0%BE%EA%B8%B0/README.md)|
 |5373. 큐빙|[링크](./%EB%B0%B1%EC%A4%80/Platinum/5373.%E2%80%85%ED%81%90%EB%B9%99/README.md)|
 ### 🚀 Silver
 | 문제번호 | 링크 |
