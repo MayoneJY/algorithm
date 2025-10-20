@@ -51,28 +51,43 @@ public class Main {
         });
 
         long[] visited = new long[N+1];
+        long[] visitedMax = new long[N+1];
         Arrays.fill(visited, Long.MAX_VALUE);
         
         visited[S] = 0;
+        visitedMax[S] = 0;
         pq.add(new Edge(S, 0));
+        long result = Long.MAX_VALUE;
         while (!pq.isEmpty()) {
             Edge now = pq.poll();
 
+            if(now.m >= result)
+                continue;
             if(now.v == E){
-                System.out.println(now.m);
-                return;
+                result = now.m;
+                // break;
             }
 
             if(visited[now.v] < now.w) continue;
 
             for(Edge e: edges.get(now.v)){
-                if(visited[now.v] + e.w <= max && visited[e.v] > visited[now.v] + e.w){
+                if(visited[now.v] + e.w <= max && (visited[e.v] > visited[now.v] + e.w || visitedMax[e.v] > now.m)){
                     long mm = Math.max(now.m, e.w);
                     visited[e.v] = visited[now.v] + e.w;
+                    visitedMax[e.v] = mm;
                     pq.add(new Edge(e.v, visited[e.v], mm));
                 }
             }
         }
-        System.out.println(-1);
+        while (!pq.isEmpty()) {
+            Edge now = pq.poll();
+            if(now.v == E){
+                result = Math.min(result, now.m);
+            }
+        }
+        if(result == Long.MAX_VALUE)
+            System.out.println(-1);
+        else
+            System.out.println(result);
     }
 }
