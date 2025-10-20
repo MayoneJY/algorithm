@@ -45,7 +45,7 @@ public class Main {
 
     static void bfs(){
         PriorityQueue<Edge> pq = new PriorityQueue<>((o1, o2) -> {
-            if(o1.m < o2.m)
+            if(o1.m != o2.m)
                 return Long.compare(o1.m, o2.m);
             return Long.compare(o1.w, o2.w);
         });
