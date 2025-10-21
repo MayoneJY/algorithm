@@ -53,7 +53,7 @@ public class Main {
         long[] visited = new long[N+1];
         long[] visitedMax = new long[N+1];
         Arrays.fill(visited, Long.MAX_VALUE);
-        
+        Arrays.fill(visitedMax, Long.MAX_VALUE);
         visited[S] = 0;
         visitedMax[S] = 0;
         pq.add(new Edge(S, 0));
@@ -71,20 +71,20 @@ public class Main {
             if(visited[now.v] < now.w) continue;
 
             for(Edge e: edges.get(now.v)){
-                if(visited[now.v] + e.w <= max && (visited[e.v] > visited[now.v] + e.w || visitedMax[e.v] > now.m)){
-                    long mm = Math.max(now.m, e.w);
-                    visited[e.v] = visited[now.v] + e.w;
+                long mm = Math.max(now.m, e.w);
+                if(now.w + e.w <= max && visitedMax[e.v] > mm){
+                    visited[e.v] = now.w + e.w;
                     visitedMax[e.v] = mm;
                     pq.add(new Edge(e.v, visited[e.v], mm));
                 }
             }
         }
-        while (!pq.isEmpty()) {
-            Edge now = pq.poll();
-            if(now.v == E){
-                result = Math.min(result, now.m);
-            }
-        }
+        // while (!pq.isEmpty()) {
+        //     Edge now = pq.poll();
+        //     if(now.v == E){
+        //         result = Math.min(result, now.m);
+        //     }
+        // }
         if(result == Long.MAX_VALUE)
             System.out.println(-1);
         else
